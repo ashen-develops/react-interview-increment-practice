@@ -8,14 +8,19 @@ export default class App extends React.Component {
             count: 0
         };
     }
+    increment(){
+        this.setState({count: this.state.count + 1})
+    }
+    
 
     render() {
+        console.log(this.increment)
         return (
             <div className="parent">
                 <div className="count">
                     Number of clicks: {this.state.count}
                 </div>
-                <IncrementButton />
+                <IncrementButton incrementOnClick={() => this.increment()}/>
             </div>
         );
     }
